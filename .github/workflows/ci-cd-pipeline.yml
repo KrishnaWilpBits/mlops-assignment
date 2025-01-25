@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # Use Python 3.9
+          python-version: '3.10'  # Use Python 3.9
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
@@ -30,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # Use Python 3.9
+          python-version: '3.10'  # Use Python 3.9
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
@@ -48,7 +48,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # Use Python 3.9
+          python-version: '3.10' 
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
