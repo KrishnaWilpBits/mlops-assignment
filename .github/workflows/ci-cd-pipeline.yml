@@ -1,58 +1,43 @@
-name: CI/CD Pipeline
+name: ML Pipeline
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  lint:
+  lint-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2  # Check out the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # Use Python 3.9
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install flake8  # Install Flake8 for linting
-      - name: Lint with flake8
-        run: |
-          flake8 .  # Run Flake8 to lint the code
+          python-version: '3.8'
+      
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2  # Check out the repository
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.10'  # Use Python 3.9
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt  # Install project dependencies
-          pip install pytest  # Install pytest for testing
-      - name: Run tests
-        run: |
-          pytest  # Run the tests
+      - name: Lint
+        run: flake8 .
+
+      - name: Test
+        run: pytest
 
   deploy:
+    needs: lint-and-test
     runs-on: ubuntu-latest
-    needs: [lint, test]  # Ensure linting and testing pass before deployment
     steps:
-      - uses: actions/checkout@v2  # Check out the repository
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Azure
+        uses: azure/login@v1
         with:
-          python-version: '3.10' 
-      - name: Install dependencies
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure
         run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt  # Install project dependencies
-      - name: Deploy model
-        run: |
-          python3 app.py  # Run the Flask app (for demonstration purposes)
+          az webapp up --name my-ml-app --resource-group my-ml-group --sku FREE
