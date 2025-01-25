@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/personal/Desktop/mlops/mlops-assignment/mlruns/113514226858959097/ce26e8523d5d4641a6d7b564e1d34b16/artifacts
+end_time: 1737793748183
+entry_point_name: ''
+experiment_id: '113514226858959097'
+lifecycle_stage: active
+run_id: ce26e8523d5d4641a6d7b564e1d34b16
+run_name: indecisive-kit-645
+run_uuid: ce26e8523d5d4641a6d7b564e1d34b16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737793746781
+status: 3
+tags: []
+user_id: personal

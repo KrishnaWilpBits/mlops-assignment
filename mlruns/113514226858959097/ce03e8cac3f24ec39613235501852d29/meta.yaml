@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/personal/Desktop/mlops/mlops-assignment/mlruns/113514226858959097/ce03e8cac3f24ec39613235501852d29/artifacts
+end_time: 1737793746779
+entry_point_name: ''
+experiment_id: '113514226858959097'
+lifecycle_stage: active
+run_id: ce03e8cac3f24ec39613235501852d29
+run_name: valuable-frog-728
+run_uuid: ce03e8cac3f24ec39613235501852d29
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737793745358
+status: 3
+tags: []
+user_id: personal
