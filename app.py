@@ -13,6 +13,11 @@ def test():
     return 'hello'
 
 
+@app.route('/sample-get', methods=["GET"])
+def sampleget():
+    return 'this is a sample route'
+
+
 @app.route("/predict", methods=["POST"])
 def predict():
     # Get input data from the request
