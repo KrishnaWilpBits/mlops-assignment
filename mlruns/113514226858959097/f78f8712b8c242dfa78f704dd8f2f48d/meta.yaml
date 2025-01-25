@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/personal/Desktop/mlops/mlops-assignment/mlruns/113514226858959097/f78f8712b8c242dfa78f704dd8f2f48d/artifacts
+end_time: 1737794178844
+entry_point_name: ''
+experiment_id: '113514226858959097'
+lifecycle_stage: active
+run_id: f78f8712b8c242dfa78f704dd8f2f48d
+run_name: glamorous-steed-891
+run_uuid: f78f8712b8c242dfa78f704dd8f2f48d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737794177105
+status: 3
+tags: []
+user_id: personal

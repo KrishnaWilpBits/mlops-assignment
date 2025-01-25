@@ -1,0 +1,6 @@
+artifact_location: file:///Users/personal/Desktop/mlops/mlops-assignment/mlruns/113514226858959097
+creation_time: 1737793743048
+experiment_id: '113514226858959097'
+last_update_time: 1737793743048
+lifecycle_stage: active
+name: iris_classification_experiment
